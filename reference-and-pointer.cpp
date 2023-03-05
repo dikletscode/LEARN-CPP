@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void swapAndMultiply(int &numA, int &numB, int multipliedBy = 1);
+
 int main()
 {
     // The memory address will remain the same
@@ -37,5 +39,17 @@ int main()
 
     pointerZero1 = &zero2;
     cout << *pointerZero1 << " " << zero2 << "\n\n";
+
+    cout << zero1 << " = " << zero2 << "\n";
+    swapAndMultiply(zero1, zero2);
+    cout << zero1 << " = " << zero2 << "\n\n";
     return 0;
+}
+
+void swapAndMultiply(int &numA, int &numB, int multipliedBy)
+{
+    int temp = numA;
+    cout << "function running " << numA << "=" << &numA << "\n";
+    numA = numB * multipliedBy;
+    numB = temp * multipliedBy;
 }
